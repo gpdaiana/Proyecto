@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de usuarios - LC &amp; Asociados</title>
+    <link rel="stylesheet" href="./estilos/styles.css">
+</head>
+<body>
+    <header>
+        <h1>LC &amp; Asociados</h1>
+        <p>Módulo de gestión de usuarios y roles</p>
+        <nav class="menu">
+            <a href="home.html">← Volver al inicio</a>
+        </nav>
+    </header>
+
+    <div class="container usuarios-layout">
+        <!-- Columna izquierda: listado de usuarios -->
+        <section class="usuarios-lista">
+            <h2>Usuarios registrados</h2>
+            <p class="descripcion">
+                Aquí se muestra un ejemplo del listado de usuarios del sistema
+                con su rol y estado. Más adelante se le va a agregar funcionalidad.
+            </p>
+
+            <table class="tabla-usuarios">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hector Mendex</td>
+                        <td>Hector@lcasociados.com</td>
+                        <td>Administrador</td>
+                        <td>Activo</td>
+                    </tr>
+                    <tr>
+                        <td>Daiana Garcia</td>
+                        <td>Daiana@lcasociados.com</td>
+                        <td>Contadora</td>
+                        <td>Activo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Columna derecha: formulario de usuario -->
+        <section class="usuarios-form">
+            <h2>Registro / editar usuario</h2>
+            <p class="descripcion">
+                Formulario de ejemplo para crear o actualizar usuarios.
+            </p>
+
+            <form>
+                <div class="campo">
+                    <label for="nombreUsuario">Nombre completo:</label>
+                    <input type="text" id="nombreUsuario" placeholder="Juan Perez">
+                </div>
+
+                <div class="campo">
+                    <label for="correoUsuario">Correo electrónico:</label>
+                    <input type="email" id="correoUsuario" placeholder="juan@lcasociados.com">
+                </div>
+
+                <div class="campo">
+                    <label for="rolUsuario">Rol:</label>
+                    <select id="rolUsuario">
+                        <option value="">-- Seleccione un rol --</option>
+                        <option value="admin">Administrador</option>
+                        <option value="contador">Contador</option>
+                        <option value="asistente">Asistente</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="estadoUsuario">Estado:</label>
+                    <select id="estadoUsuario">
+                        <option value="">-- Seleccione estado --</option>
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
+
+                <div class="acciones-form">
+                    <button type="button">Guardar usuario</button>
+                    <button type="button" class="btn-secundario">Limpiar</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

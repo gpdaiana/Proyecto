@@ -251,3 +251,113 @@ footer, .footer {
   background-color: #eef6ff;
   border: 1px solid #c7ddff;
 }
+
+/*Usuarios*/
+
+/* ===== MÓDULO DE USUARIOS ===== */
+
+.usuarios-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Columna izquierda (tabla) */
+.usuarios-lista {
+    flex: 1 1 55%;
+    background-color: #ffffff;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Columna derecha (formulario) */
+.usuarios-form {
+    flex: 1 1 40%;
+    background-color: #f8fafc;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.usuarios-lista h2,
+.usuarios-form h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.descripcion {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Tabla de usuarios */
+.tabla-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td {
+    border: 1px solid #ddd;
+    padding: 0.5rem 0.6rem;
+    text-align: left;
+}
+
+.tabla-usuarios thead {
+    background-color: #e5edf8;
+    font-weight: 600;
+}
+
+/* Formulario */
+.campo {
+    margin-bottom: 0.8rem;
+}
+
+.campo label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 0.4rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+.acciones-form {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.acciones-form button {
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #2563eb;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.acciones-form .btn-secundario {
+    background-color: #e5e7eb;
+    color: #111827;
+}
+
+/* Responsive: en pantallas pequeñas*/
+@media (max-width: 768px) {
+    .usuarios-layout {
+        flex-direction: column;
+    }
+}
