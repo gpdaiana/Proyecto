@@ -93,7 +93,37 @@ img {
 .video-container {
     display: flex;
     justify-content: center;
-    margin: 25px 0;
+    margin: 80px 0;
+}
+
+/*Servicios*/
+.card-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px; 
+}
+
+.card-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  text-align: left; 
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 /*Footer*/
