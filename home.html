@@ -1,93 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LC&Asoc</title>
-    <link rel="stylesheet" href="./estilos/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>LC & Asociados - Panel</title>
+    <link rel="stylesheet" href="Estilos/styles.css" />
+    <style>
+      body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #fff; color: #222; }
+      header { background: #7a3f1a; color: #fff; padding: 28px 20px; text-align: center; }
+      header h1 { margin: 0; font-size: 32px; }
+      header h2 { margin: 8px 0 0 0; font-size: 20px; }
+      header p { margin-top: 8px; font-size: 14px; opacity: 0.95; }
+
+      .container { display: flex; gap: 24px; width: 95%; max-width: 1200px; margin: 24px auto; }
+      .menu { width: 220px; }
+      nav { background: #f2f2f2; padding: 18px; border-radius: 6px; box-shadow: 0 0 0 6px #f7f7f7 inset; }
+      nav a { display: block; color: #1e4b73; text-decoration: none; text-align: center; margin: 8px 0; font-size: 15px; }
+      nav a:hover { text-decoration: underline; }
+
+      .content { flex: 1; background: #fff; padding: 18px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+      .content section { margin-bottom: 28px; }
+      .content h2 { color: #1e4b73; margin-bottom: 8px; }
+      .image-wrap { display:flex; justify-content:center; align-items:center; padding: 6px; }
+      .image-wrap img { max-width: 420px; width: 100%; height: auto; }
+
+      .video-container { max-width: 720px; margin: 0 auto; }
+      footer { text-align:center; padding:16px; color:#666; font-size:13px; }
+
+      .resumen-box {
+        margin-top: 15px;
+        background: #eef4f9;
+        padding: 14px;
+        border-left: 4px solid #1e4b73;
+        border-radius: 6px;
+        font-size: 15px;
+      }
+
+      /* Botón verde */
+      .btn-verde {
+        display:inline-block;
+        margin-top:12px;
+        padding:10px 14px;
+        background:#2e7d32;
+        color:#fff;
+        text-decoration:none;
+        border-radius:5px;
+        font-weight:bold;
+        transition:0.25s;
+      }
+      .btn-verde:hover { background:#245b28; }
+
+      @media (max-width: 800px) {
+        .container { flex-direction: column; padding: 12px; }
+        .menu { width: 100%; order: 2; }
+        .content { order: 1; }
+      }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>LC & Asociados</h1>
-        <h1>Prueba</h1>
-        <p>Servicios de contabilidad para emprendedores que trabajen bajo la modalidad de servicios profesionales</p>
-    </header>
+
+<header>
+    <h1>LC & Asociados</h1>
+    <h2>Prueba</h2>
+    <p>Servicios de contabilidad para emprendedores que trabajen bajo la modalidad de servicios profesionales</p>
+</header>
+
 <div class="container">
-<div class="menu">
+  <div class="menu">
     <nav>
-        <a href="#Historia">Quiénes somos</a>
-        <a href="#Inicio">Inicio</a>
-        <a href="#Clientes">Gestión de clientes</a>
-        <a href="#Contabilidad">Gestión contable</a>
-        <a href="#Impuestos">Gestión de impuestos</a>
-        <a href="#Usuarios">Usuarios</a>
-        <a href="#Reportes">Reportes</a>
-        <a href="#Video">Video</a>
+        <a href="quienes.html">Quiénes somos</a>
+        <a href="home.html">Inicio</a>
+        <a href="clientes.html">Gestión de clientes</a>
+        <a href="contable.html">Gestión contable</a>
+        <a href="impuestos.html">Gestión de impuestos</a>
+        <a href="usuarios.html">Usuarios</a>
+        <a href="reportes.html">Reportes</a>
+        <a href="video.html">Video</a>
     </nav>
-</div>
-<div class="content">
+  </div>
+
+  <div class="content">
+
     <section id="Historia">
-        <h2>Aqui quienes somos</h2>
-        <p>Aqui que desarrollamos.</p>
-             </section>
-    <section id="imagen">
-        <img src="contabilidad.png" alt="Contabilidad">
+        <h2>Aquí, quiénes somos</h2>
+        <p>Aquí que desarrollamos.</p>
     </section>
+
+    <section id="imagen" class="image-wrap">
+        <img src="contabilidad.png" alt="Ilustración de contabilidad">
     </section>
+
     <section id="Inicio">
-        <h2>Servicios:</h2>
-        <p>Aqui resumen de servicios</p>
+        <h2>Servicios</h2>
+        <p>Resumen de servicios:</p>
         <ul>
             <li>Servicios1</li>
             <li>Servicios2</li>
-            
         </ul>
+    </section>
+
     <section id="Clientes">
         <h2>Nuestros clientes</h2>
-        <p>Clientes</p>
-        <ol>
-            <li>Informacion.</li>
-        </ol>
+        <p>Información general de clientes y servicios contratados.</p>
 
-          </ul>
-    <section id="Contabilidad">
-        <h2>Nuestros clientes</h2>
-        <p>Clientes</p>
-        <ol>
-            <li>Informacion.</li>
-        </ol>
-        <section id="Impuestos">
-        <h2>Nuestros clientes</h2>
-        <p>Clientes</p>
-        <ol>
-            <li>Informacion.</li>
-        </ol>
-        <section id="Usuarios">
-        <h2>Nuestros clientes</h2>
-        <p>Clientes</p>
-        <ol>
-            <li>Informacion.</li>
-        </ol>
-        <section id="Reportes">
-        <h2>Nuestros clientes</h2>
-        <p>Clientes</p>
-        <ol>
-            <li>Informacion.</li>
-        </ol>
-          
-
+        <div id="resumenClientes" class="resumen-box">
+            Cargando información de clientes...
+        </div>
+        <a href="clientes.html" class="btn-verde">
+          Ir a Gestión de Clientes
+        </a>
     </section>
+
+    <!-- ============================= -->
+
+    <section id="Contabilidad">
+        <h2>Gestión contable</h2>
+        <p>Descripción breve del módulo contable.</p>
+    </section>
+
+    <section id="Impuestos">
+        <h2>Gestión de impuestos</h2>
+        <p>Descripción del módulo de impuestos.</p>
+    </section>
+
+    <section id="Usuarios">
+        <h2>Usuarios</h2>
+        <p>Administración de usuarios y roles.</p>
+    </section>
+
+    <section id="Reportes">
+        <h2>Reportes</h2>
+        <p>Generación de balances, estados y exportación a PDF.</p>
+    </section>
+
     <section id="Video">
         <h2>Video</h2>
         <div class="video-container">
-        <iframe width="560" height="315" 
-        src="https://media.istockphoto.com/id/1456077682/video/two-businessmen-meeting-and-talking.mp4?s=mp4-640x640-is&k=20&c=144h6UrLeFyg3NOx1pUC4PdKNSeau8TgEgFBetHV8-o=" 
-        title="LC&Asoc" 
-        frameborder="0">
+          <video controls width="100%" preload="metadata">
+            <source src="https://media.istockphoto.com/id/1456077682/video/two-businessmen-meeting-and-talking.mp4?s=mp4-640x640-is&k=20&c=144h6UrLeFyg3NOx1pUC4PdKNSeau8TgEgFBetHV8-o=" type="video/mp4">
+            Tu navegador no soporta la etiqueta <code>video</code>.
+          </video>
         </div>
-    </iframe>
     </section>
+
+  </div>
 </div>
-  
+
+<footer>
+  &copy; LC & Asociados - Todos los derechos reservados
+</footer>
+
+<script>
+    (function(){
+        const resumen = document.getElementById("resumenClientes");
+        const clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+
+        if(clientes.length === 0){
+            resumen.innerHTML = `
+                <strong>No hay clientes registrados.</strong><br>
+                Puede agregar clientes desde el módulo 
+                <em>Gestión de Clientes</em>.
+            `;
+            return;
+        }
+
+        resumen.innerHTML = `
+            <strong>Total de clientes registrados:</strong> ${clientes.length}<br>
+            <strong>Último cliente agregado:</strong> 
+            ${clientes[clientes.length - 1].nombre}
+        `;
+    })();
+</script>
+
 </body>
 </html>

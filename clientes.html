@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Clientes</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #2e7d32;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 2px solid #c8e6c9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: #2e7d32;
+            outline: none;
+        }
+
+        button {
+            background: #2e7d32;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #1b5e20;
+        }
+
+        .btn-eliminar {
+            background: crimson;
+            padding: 8px 14px;
+            border-radius: 8px;
+        }
+
+        .btn-eliminar:hover {
+            background: #9b0000;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            font-size: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: #2e7d32;
+            color: white;
+        }
+
+        th, td {
+            padding: 14px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #e8f5e9;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>Gestión de Clientes</header>
+
+<div class="contenedor">
+    <div class="card">
+        <h2>Registrar Cliente</h2>
+
+        <form id="clienteForm">
+            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="email" id="correo" placeholder="Correo">
+            <input type="text" id="telefono" placeholder="Teléfono">
+            <input type="text" id="cedula" placeholder="Cédula">
+            <button type="submit">Agregar Cliente</button>
+        </form>
+
+        <h2 style="margin-top:35px;">Lista de Clientes</h2>
+
+        <table id="tablaClientes">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Cédula</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+
+    // Carga los clientes desde localStorage
+    let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+
+    // Carga la tabla al inicio
+    document.addEventListener("DOMContentLoaded", cargarTabla);
+
+    const formulario = document.getElementById("clienteForm");
+
+    formulario.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let nombre = document.getElementById("nombre").value.trim();
+        let correo = document.getElementById("correo").value.trim();
+        let telefono = document.getElementById("telefono").value.trim();
+        let cedula = document.getElementById("cedula").value.trim();
+
+        if (!nombre || !correo || !telefono || !cedula) {
+            alert("Por favor complete todos los campos.");
+            return;
+        }
+
+        let cliente = {
+            id: Date.now(),
+            nombre,
+            correo,
+            telefono,
+            cedula
+        };
+
+        clientes.push(cliente);
+        localStorage.setItem("clientes", JSON.stringify(clientes));
+
+        formulario.reset();
+        cargarTabla();
+    });
+
+    function cargarTabla() {
+        const tbody = document.querySelector("#tablaClientes tbody");
+        tbody.innerHTML = "";
+
+        clientes.forEach(cliente => {
+            const fila = document.createElement("tr");
+
+            fila.innerHTML = `
+                <td>${cliente.nombre}</td>
+                <td>${cliente.correo}</td>
+                <td>${cliente.telefono}</td>
+                <td>${cliente.cedula}</td>
+                <td>
+                    <button class="btn-eliminar" onclick="eliminarCliente(${cliente.id})">
+                        Eliminar
+                    </button>
+                </td>
+            `;
+
+            tbody.appendChild(fila);
+        });
+    }
+
+    function eliminarCliente(id) {
+        clientes = clientes.filter(c => c.id !== id);
+        localStorage.setItem("clientes", JSON.stringify(clientes));
+        cargarTabla();
+    }
+
+</script>
+
+</body>
+</html>
