@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de impuestos - LC &amp; Asociados</title>
+    <link rel="stylesheet" href="./estilos/styles.css">
+</head>
+<body>
+    <header>
+        <h1>LC &amp; Asociados</h1>
+        <p>Gestión de impuestos</p>
+        <nav class="menu">
+            <a href="index.html">← Volver al inicio</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Gestión de impuestos</h2>
+        <p>
+            Seleccione el tipo de declaración que desea simular y complete los datos.
+            Es solo una aproximación sencilla, no reemplaza los formularios oficiales de Hacienda.
+        </p>
+
+        <!-- Selector de tipo de declaración -->
+        <label for="tipoDeclaracion"><strong>Tipo de declaración:</strong></label>
+        <select id="tipoDeclaracion">
+            <option value="">-- Seleccione --</option>
+            <option value="iva">Declaración de IVA</option>
+            <option value="d101">Declaración D-101 (renta)</option>
+        </select>
+
+        <!-- Formulario IVA -->
+        <section id="formIva" class="form-impuesto oculto">
+            <h3>Declaración de IVA (simulación)</h3>
+            <form id="ivaForm">
+                <div class="campo">
+                    <label for="gravado13">Monto gravado 13%:</label>
+                    <input type="number" id="gravado13" min="0" step="0.01">
+                </div>
+                <div class="campo">
+                    <label for="gravado4">Monto gravado 4%:</label>
+                    <input type="number" id="gravado4" min="0" step="0.01">
+                </div>
+                <div class="campo">
+                    <label for="gravado2">Monto gravado 2%:</label>
+                    <input type="number" id="gravado2" min="0" step="0.01">
+                </div>
+                <div class="campo">
+                    <label for="gravado1">Monto gravado 1%:</label>
+                    <input type="number" id="gravado1" min="0" step="0.01">
+                </div>
+                <div class="campo">
+                    <label for="ivaSoportado">IVA soportado (crédito de compras):</label>
+                    <input type="number" id="ivaSoportado" min="0" step="0.01">
+                </div>
+
+                <button type="submit">Calcular IVA</button>
+            </form>
+        </section>
+
+        <!-- Formulario D-101 -->
+        <section id="formD101" class="form-impuesto oculto">
+            <h3>Declaración D-101 (simulación)</h3>
+            <form id="d101Form">
+                <div class="campo">
+                    <label for="ingresos">Ingresos brutos:</label>
+                    <input type="number" id="ingresos" min="0" step="0.01">
+                </div>
+                <div class="campo">
+                    <label for="gastos">Gastos deducibles:</label>
+                    <input type="number" id="gastos" min="0" step="0.01">
+                </div>
+                <div class="campo">
+                    <label for="pagosParciales">Pagos parciales / retenciones:</label>
+                    <input type="number" id="pagosParciales" min="0" step="0.01">
+                </div>
+
+                <button type="submit">Calcular D-101</button>
+            </form>
+        </section>
+
+        <!-- Resultado de cualquier cálculo -->
+        <section id="resultado" class="resultado oculto">
+            <h3>Resultado</h3>
+            <p id="mensajeResultado"></p>
+        </section>
+    </div>
+
+    <script src="./javascript/impuestos.js"></script>
+</body>
+</html>

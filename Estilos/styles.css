@@ -214,3 +214,40 @@ footer, .footer {
 .btn-eliminar:hover {
     background-color: #922b21;
 }
+
+
+/* impuestos */
+.form-impuesto {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.campo {
+  margin-bottom: 0.75rem;
+}
+
+.campo label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.campo input {
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+}
+
+.oculto {
+  display: none;
+}
+
+.resultado {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #eef6ff;
+  border: 1px solid #c7ddff;
+}
